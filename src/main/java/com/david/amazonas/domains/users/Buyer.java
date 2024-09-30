@@ -28,6 +28,7 @@ public class Buyer {
     private String cpf;
     private String address;
 
+    @Getter
     @OneToMany(mappedBy = "buyer")
     private List<Order> orders = new ArrayList<>();
 }

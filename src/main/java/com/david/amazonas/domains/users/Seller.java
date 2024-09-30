@@ -25,6 +25,7 @@ public class Seller {
     private String cnpj;
     private String phoneNumber;
 
+    @Getter
     @OneToMany(mappedBy = "seller")
     private List<Product> products = new ArrayList<>();
 }

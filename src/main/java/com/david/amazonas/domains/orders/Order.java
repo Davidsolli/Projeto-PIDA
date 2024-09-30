@@ -1,14 +1,14 @@
 package com.david.amazonas.domains.orders;
 
 import com.david.amazonas.domains.payments.Payment;
+import com.david.amazonas.domains.products.Product;
 import com.david.amazonas.domains.users.Buyer;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.Instant;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -25,13 +25,22 @@ public class Order {
     private Double totalAmount;
     private OrderStatus status;
 
+    @Getter
+    @Setter
     @ManyToOne
     @JoinColumn(name = "buyer_id")
     private Buyer buyer;
 
+    @Getter
     @OneToMany(mappedBy = "id.order")
     private Set<OrderItem> items = new HashSet<>();
 
+    @Getter
+    @Setter
     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
     private Payment payment;
+
+    public List<Product> getProducts() {
+        return items.stream().map(OrderItem::getProduct).toList();
+    }
 }

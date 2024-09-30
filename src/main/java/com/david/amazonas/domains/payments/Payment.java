@@ -2,11 +2,10 @@ package com.david.amazonas.domains.payments;
 
 import com.david.amazonas.domains.orders.Order;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.Instant;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -20,6 +19,8 @@ public class Payment {
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant moment;
 
+    @Getter
+    @Setter
     @OneToOne
     @MapsId
     private Order order;
