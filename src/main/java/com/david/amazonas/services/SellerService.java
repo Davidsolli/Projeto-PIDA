@@ -27,4 +27,10 @@ public class SellerService {
 
         return new SellerDTO(seller);
     }
+
+    @Transactional(readOnly = true)
+    public SellerDTO findById(Long id) {
+        Seller seller = sellerRepository.findById(id).orElseThrow();
+        return new SellerDTO(seller);
+    }
 }
