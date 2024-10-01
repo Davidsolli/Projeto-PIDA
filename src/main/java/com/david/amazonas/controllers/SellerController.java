@@ -3,6 +3,8 @@ package com.david.amazonas.controllers;
 import com.david.amazonas.dtos.users.SellerDTO;
 import com.david.amazonas.services.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -16,6 +18,7 @@ public class SellerController {
     @Autowired
     private SellerService sellerService;
 
+    // Implementar inserção de senha.
     @PostMapping
     public ResponseEntity<SellerDTO> insert(@RequestBody SellerDTO sellerDTO) {
 
@@ -29,6 +32,12 @@ public class SellerController {
     public ResponseEntity<SellerDTO> findById(@PathVariable Long id) {
         SellerDTO sellerDTO = sellerService.findById(id);
         return ResponseEntity.ok(sellerDTO);
+    }
+
+    @GetMapping
+    public ResponseEntity<Page<SellerDTO>> findAll(Pageable pageable) {
+        Page<SellerDTO> sellerDTOPage = sellerService.findAll(pageable);
+        return ResponseEntity.ok(sellerDTOPage);
     }
 
     @PutMapping(value = "/{id}")
