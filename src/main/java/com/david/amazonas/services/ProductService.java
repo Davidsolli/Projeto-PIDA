@@ -23,9 +23,7 @@ public class ProductService {
         Product product = new Product();
         Seller seller = sellerRepository.getReferenceById(productDTO.getSellerId());
 
-        product.setName(productDTO.getName());
-        product.setDescription(productDTO.getDescription());
-        product.setPrice(productDTO.getPrice());
+        copyDtoToEntity(product, productDTO);
         product.setSeller(seller);
 
         product = productRepository.save(product);
@@ -37,5 +35,19 @@ public class ProductService {
     public ProductDTO findById(Long id) {
         Product product = productRepository.findById(id).orElseThrow();
         return new ProductDTO(product);
+    }
+
+    @Transactional
+    public ProductDTO update(Long id, ProductDTO productDTO) {
+        Product product = productRepository.findById(id).orElseThrow();
+        copyDtoToEntity(product, productDTO);
+        product = productRepository.save(product);
+        return new ProductDTO(product);
+    }
+
+    public void copyDtoToEntity(Product product, ProductDTO productDTO) {
+        product.setName(productDTO.getName());
+        product.setDescription(productDTO.getDescription());
+        product.setPrice(productDTO.getPrice());
     }
 }
