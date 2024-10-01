@@ -39,6 +39,11 @@ public class SellerService {
         return new SellerDTO(seller);
     }
 
+    @Transactional
+    public void delete(Long id) {
+        sellerRepository.deleteById(id);
+    }
+
     public void copyDtoToEntity(Seller seller, SellerDTO sellerDTO) {
         seller.setCnpj(sellerDTO.getCnpj());
         seller.setEmail(sellerDTO.getEmail());
