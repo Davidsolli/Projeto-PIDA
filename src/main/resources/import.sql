@@ -1,0 +1,1 @@
+INSERT INTO sellers(email, password, business_name, cnpj, phone_number) VALUES('americanas@gmail.com', '1234', 'Americanas', '12.345.678/0001-00', '(61)99511-8982');
