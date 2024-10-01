@@ -30,4 +30,10 @@ public class SellerController {
         SellerDTO sellerDTO = sellerService.findById(id);
         return ResponseEntity.ok(sellerDTO);
     }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<SellerDTO> update(@PathVariable Long id, @RequestBody SellerDTO sellerDTO) {
+        sellerDTO = sellerService.update(id, sellerDTO);
+        return ResponseEntity.ok(sellerDTO);
+    }
 }

@@ -18,10 +18,7 @@ public class SellerService {
 
         Seller seller = new Seller();
 
-        seller.setCnpj(sellerDTO.getCnpj());
-        seller.setEmail(sellerDTO.getEmail());
-        seller.setBusinessName(sellerDTO.getBusinessName());
-        seller.setPhoneNumber(sellerDTO.getPhoneNumber());
+        copyDtoToEntity(seller, sellerDTO);
 
         seller = sellerRepository.save(seller);
 
@@ -32,5 +29,20 @@ public class SellerService {
     public SellerDTO findById(Long id) {
         Seller seller = sellerRepository.findById(id).orElseThrow();
         return new SellerDTO(seller);
+    }
+
+    @Transactional
+    public SellerDTO update(Long id, SellerDTO sellerDTO) {
+        Seller seller = sellerRepository.getReferenceById(id);
+        copyDtoToEntity(seller, sellerDTO);
+        seller = sellerRepository.save(seller);
+        return new SellerDTO(seller);
+    }
+
+    public void copyDtoToEntity(Seller seller, SellerDTO sellerDTO) {
+        seller.setCnpj(sellerDTO.getCnpj());
+        seller.setEmail(sellerDTO.getEmail());
+        seller.setBusinessName(sellerDTO.getBusinessName());
+        seller.setPhoneNumber(sellerDTO.getPhoneNumber());
     }
 }
