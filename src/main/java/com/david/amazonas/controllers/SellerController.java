@@ -28,7 +28,7 @@ public class SellerController {
         return ResponseEntity.created(uri).body(sellerDTO);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<SellerDTO> findById(@PathVariable Long id) {
         SellerDTO sellerDTO = sellerService.findById(id);
         return ResponseEntity.ok(sellerDTO);
