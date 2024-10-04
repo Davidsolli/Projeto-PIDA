@@ -16,6 +16,7 @@ public class BuyerController {
     @Autowired
     private BuyerService buyerService;
 
+    // Implementar inserção de senha.
     @PostMapping
     public ResponseEntity<BuyerDTO> insert(@RequestBody BuyerDTO buyerDTO) {
         buyerDTO = buyerService.insert(buyerDTO);

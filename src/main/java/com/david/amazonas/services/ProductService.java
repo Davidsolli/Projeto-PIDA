@@ -40,11 +40,11 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public Page<ProductDTO> findAll(Pageable pageable, Long sellerId) {
+    public Page<ProductDTO> findAll(Long sellerId, Pageable pageable) {
 
-        // TODO Busca personalizada
+        Page<Product> productPage = productRepository.searchBySellerId(pageable, sellerId);
 
-        return null;
+        return productPage.map(ProductDTO::new);
     }
 
     @Transactional
