@@ -22,21 +22,16 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderId;
     private Instant orderDate;
-    private Double totalAmount;
     private OrderStatus status;
 
-    @Getter
-    @Setter
+
     @ManyToOne
     @JoinColumn(name = "buyer_id")
     private Buyer buyer;
 
-    @Getter
     @OneToMany(mappedBy = "id.order")
     private Set<OrderItem> items = new HashSet<>();
 
-    @Getter
-    @Setter
     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
     private Payment payment;
 

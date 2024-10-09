@@ -1,5 +1,6 @@
 package com.david.amazonas.domains.users;
 
+import com.david.amazonas.domains.orders.Order;
 import com.david.amazonas.domains.products.Product;
 import jakarta.persistence.*;
 import lombok.*;
@@ -25,7 +26,6 @@ public class Seller {
     private String cnpj;
     private String phoneNumber;
 
-    @Getter
     @OneToMany(mappedBy = "seller")
     private List<Product> products = new ArrayList<>();
 }
