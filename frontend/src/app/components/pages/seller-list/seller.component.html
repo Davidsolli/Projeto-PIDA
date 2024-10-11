@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Lista de Vendedores</h1>
+    
+    <!-- Tabela de Vendedores -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome da Empresa</th>
+          <th>Email</th>
+          <th>CNPJ</th>
+          <th>Telefone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let seller of sellers">
+          <td>{{ seller.sellerId }}</td>
+          <td>{{ seller.businessName }}</td>
+          <td>{{ seller.email }}</td>
+          <td>{{ seller.cnpj }}</td>
+          <td>{{ seller.phoneNumber }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- Controles de Paginação -->
+    <div class="pagination">
+      <button (click)="previousPage()" [disabled]="page === 0">Anterior</button>
+      <button (click)="nextPage()" [disabled]="(page + 1) * size >= totalElements">Próximo</button>
+    </div>
+  </div>
+  

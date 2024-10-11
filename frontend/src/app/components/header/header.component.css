@@ -1,0 +1,49 @@
+:root {
+    --color-dark-gray: #2C3E50;
+    --color-white: #fff;
+    --color-green: #1ABC9C;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.nav-container {
+    display: flex;
+    background-color: #2C3E50;
+    height: 100px;
+    width: 100%;
+    padding: 20px;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-main a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu-items {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-items li {
+    margin: 15px 10px 10px 10px;
+    font-size: 18px;
+}
+
+.nav-brand {
+    margin-bottom: 0;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0;
+}
