@@ -12,7 +12,7 @@ export class SellerComponent {
 
   sellers: Seller[] = [];
   page = 0; // Página inicial
-  size = 10; // Tamanho da página
+  size = 4; // Tamanho da página
   totalElements = 0; // Número total de elementos
 
   constructor(private sellerService: SellerService) {
