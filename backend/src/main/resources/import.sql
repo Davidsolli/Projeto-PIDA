@@ -1,3 +1,10 @@
-INSERT INTO sellers(email, password, business_name, cnpj, phone_number) VALUES('americanas@gmail.com', '1234', 'Americanas', '12.345.678/0001-00', '(61)99511-8982');
-INSERT INTO sellers(email, password, business_name, cnpj, phone_number) VALUES('magazine.luiza@gmail.com', '36534', 'Magazine Luiza', '12.345.678/0011-00', '(61)99511-1965');
-INSERT INTO sellers(email, password, business_name, cnpj, phone_number) VALUES('sony@gmail.com', '15534', 'Sony', '13.345.678/0011-00', '(61)99511-1965');
+INSERT INTO tb_product(name, description, price, quantity, img_url) VALUES('Smartphone Samsung Galaxy', 'Smartphone com tela de 6.4 polegadas e 128GB de armazenamento.', 1200.00, 50, 'https://example.com/img1.jpg');
+INSERT INTO tb_product(name, description, price, quantity, img_url) VALUES('Notebook Dell Inspiron', 'Notebook com processador Intel i7 e 16GB de RAM.', 4500.00, 20, 'https://example.com/img2.jpg');
+INSERT INTO tb_product(name, description, price, quantity, img_url) VALUES('Fone de Ouvido JBL', 'Fone de ouvido Bluetooth com som de alta qualidade.', 250.00, 100, 'https://example.com/img3.jpg');
+INSERT INTO tb_product(name, description, price, quantity, img_url) VALUES('Mouse Gamer Logitech', 'Mouse gamer com DPI ajustável e iluminação RGB.', 150.00, 75, 'https://example.com/img4.jpg');
+INSERT INTO tb_product(name, description, price, quantity, img_url) VALUES('Câmera Canon EOS', 'Câmera DSLR com sensor de 24.1 MP.', 3200.00, 15, 'https://example.com/img5.jpg');
+INSERT INTO tb_product(name, description, price, quantity, img_url) VALUES('Smart TV LG 50"', 'Smart TV 4K com 50 polegadas e sistema operacional webOS.', 2800.00, 30, 'https://example.com/img6.jpg');
+INSERT INTO tb_product(name, description, price, quantity, img_url) VALUES('Caixa de Som Bluetooth Sony', 'Caixa de som portátil com alta potência e conectividade Bluetooth.', 350.00, 60, 'https://example.com/img7.jpg');
+INSERT INTO tb_product(name, description, price, quantity, img_url) VALUES('Teclado Mecânico Razer', 'Teclado mecânico gamer com switches personalizados e iluminação RGB.', 500.00, 40, 'https://example.com/img8.jpg');
+INSERT INTO tb_product(name, description, price, quantity, img_url) VALUES('Tablet Apple iPad', 'Tablet Apple com tela de 10.2 polegadas e 64GB de armazenamento.', 3300.00, 25, 'https://example.com/img9.jpg');
+INSERT INTO tb_product(name, description, price, quantity, img_url) VALUES('Console Playstation 5', 'Console de última geração com suporte a jogos em 4K.', 5000.00, 10, 'https://example.com/img10.jpg');
