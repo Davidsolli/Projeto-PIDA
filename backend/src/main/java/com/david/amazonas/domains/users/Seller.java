@@ -16,7 +16,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "sellers")
-public class Seller implements UserDetails {
+public class Seller {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,20 +28,7 @@ public class Seller implements UserDetails {
     @Column(unique = true)
     private String cnpj;
     private String phoneNumber;
-    private SellerRole role;
 
     @OneToMany(mappedBy = "seller")
     private List<Product> products = new ArrayList<>();
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        if (this.role == SellerRole.ADMIN)
-            return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_SELLER"));
-        else return List.of(new SimpleGrantedAuthority("ROLE_SELLER"));
-    }
-
-    @Override
-    public String getUsername() {
-        return email;
-    }
 }
