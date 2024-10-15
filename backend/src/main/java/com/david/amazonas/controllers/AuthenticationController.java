@@ -2,7 +2,9 @@ package com.david.amazonas.controllers;
 
 import com.david.amazonas.domains.users.User;
 import com.david.amazonas.dtos.AuthenticationDTO;
+import com.david.amazonas.dtos.LoginResponseDTO;
 import com.david.amazonas.dtos.RegisterDTO;
+import com.david.amazonas.infra.security.TokenService;
 import com.david.amazonas.repositories.users.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +24,17 @@ public class AuthenticationController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping(value = "/login")
-    public ResponseEntity<Void> login(@RequestBody @Valid AuthenticationDTO data) {
+    public ResponseEntity<LoginResponseDTO> login(@RequestBody @Valid AuthenticationDTO data) {
         var userNamePassword = new UsernamePasswordAuthenticationToken(data.getLogin(), data.getPassword());
         var auth = this.authenticationManager.authenticate(userNamePassword);
 
-        return ResponseEntity.ok().build();
+        var token = tokenService.generateToken((User) auth.getPrincipal());
+
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping(value = "/register")
