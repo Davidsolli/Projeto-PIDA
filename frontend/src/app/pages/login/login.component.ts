@@ -12,8 +12,8 @@ import { LoginService } from '../../services/login.service';
 import { Toast, ToastrService } from 'ngx-toastr';
 
 interface LoginForm {
-  email: FormControl,
-  password: FormControl
+  email: FormControl;
+  password: FormControl;
 }
 
 @Component({
@@ -49,7 +49,10 @@ export class LoginComponent {
     this.loginService
       .login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe({
-        next: () => this.toastr.success('Login feito com sucesso!'),
+        next: () => {
+          this.toastr.success('Login feito com sucesso!');
+          this.router.navigate(['sellers']);
+        },
         error: () => this.toastr.error('Erro inesperado, tente novamente'),
       });
   }
