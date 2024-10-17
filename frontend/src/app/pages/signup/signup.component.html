@@ -8,12 +8,12 @@
 >
   <form [formGroup]="signupForm">
     <app-primary-input
-    formControlName="name"
-    inputName="name"
-    type="text"
-    label="Name"
-    placeholder="João da Silva"
-  ></app-primary-input>
+      formControlName="name"
+      inputName="name"
+      type="text"
+      label="Name"
+      placeholder="João da Silva"
+    ></app-primary-input>
     <app-primary-input
       formControlName="email"
       inputName="email"
@@ -35,5 +35,16 @@
       label="Confirm your password"
       placeholder=""
     ></app-primary-input>
+    <div class="role-input-field">
+      <span>I'm:</span>
+      <div class="input-area">
+        <label for="role">Seller</label>
+        <input type="radio" name="role" formControlName="role" value="SELLER" />
+      </div>
+      <div class="input-area">
+        <label for="role">Buyer</label>
+        <input type="radio" name="role" formControlName="role" value="BUYER" />
+      </div>
+    </div>
   </form>
 </app-default-login-layout>

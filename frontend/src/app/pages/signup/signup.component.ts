@@ -16,6 +16,7 @@ interface SignupForm {
   email: FormControl;
   password: FormControl;
   passwordConfirm: FormControl;
+  role: FormControl;
 }
 
 @Component({
@@ -49,14 +50,24 @@ export class SignupComponent {
         Validators.required,
         Validators.minLength(6),
       ]),
+      role: new FormControl('', [Validators.required]),
     });
   }
 
   submit() {
+    console.log(this.signupForm);
     this.loginService
-      .login(this.signupForm.value.email, this.signupForm.value.password)
+      .signup(
+        this.signupForm.value.email,
+        this.signupForm.value.password,
+        this.signupForm.value.name,
+        this.signupForm.value.role
+      )
       .subscribe({
-        next: () => this.toastr.success('Login feito com sucesso!'),
+        next: () => {
+          this.toastr.success('Registro feito com sucesso!');
+          this.router.navigate(['']);
+        },
         error: () => this.toastr.error('Erro inesperado, tente novamente'),
       });
   }
