@@ -46,13 +46,6 @@ public class AuthenticationController {
         user.setEmail(data.getLogin());
         user.setPassword(encryptedPassword);
         user.setName(data.getName());
-        user.setAge(data.getAge());
-        user.setAddress(data.getAddress());
-        user.setNumber(data.getNumber());
-        user.setBirthDate(data.getBirthDate());
-        user.setImgUrl(data.getImgUrl());
-        user.setCpf(data.getCpf());
-        user.setGender(data.getGender());
         user.setUserRole(data.getUserRole());
 
         this.userRepository.save(user);
