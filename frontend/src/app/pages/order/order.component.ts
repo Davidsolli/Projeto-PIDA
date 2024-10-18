@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 
 @Component({
-  selector: 'app-sellers-list',
+  selector: 'app-order',
   standalone: true,
   imports: [HeaderComponent],
-  templateUrl: './sellers-list.component.html',
-  styleUrl: './sellers-list.component.scss'
+  templateUrl: './order.component.html',
+  styleUrl: './order.component.scss'
 })
-export class SellersListComponent {
+export class OrderComponent {
 
 }
