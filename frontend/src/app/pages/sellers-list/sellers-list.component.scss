@@ -1,0 +1,58 @@
+@import "../../../styles/variables.scss";
+
+.container {
+    margin: 0 auto;
+    max-width: 960px;
+    margin-top: 40px;
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 30px;
+        color: $color-dark-gray;
+    }
+    .seller-card {
+        margin-top: 40px;
+        display: flex;
+        background-color: $color-light-gray;
+        border-radius: 20px;
+        .seller-img-div {
+            background-color: $color-dark-gray;
+            border-radius: 20px;
+            img {
+                padding: 10px;
+                width: 170px;
+            }
+        }
+        .seller-information {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px 20px;
+            h3 {
+                text-transform: uppercase;
+                color: $color-dark-gray;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            h4 {
+                text-transform: uppercase;
+            }
+        }
+    }
+    .pagination {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        button {
+            padding: 10px;
+            border: none;
+            text-transform: uppercase;
+            background-color: $color-dark-gray;
+            color: $color-white;
+            &:disabled {
+                opacity: 0.8;
+            }
+        }
+    }
+}

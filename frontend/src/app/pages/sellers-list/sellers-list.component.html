@@ -1,1 +1,26 @@
 <app-header></app-header>
+<main class="container">
+  <h2>Vendedores</h2>
+  <div class="seller-card" *ngFor="let seller of sellers">
+    <div class="seller-img-div">
+      <img src="assets/imgs/seller-img.png" alt="" />
+    </div>
+    <div class="seller-information">
+      <h3>{{seller.name}}</h3>
+      <h4>{{seller.email}}</h4>
+      <p>{{seller.number}}</p>
+    </div>
+  </div>
+  <div class="pagination">
+    <button (click)="sellerList(page - 1, size)" [disabled]="page === 0">
+      Anterior
+    </button>
+    <button
+      class="next-btn"
+      (click)="sellerList(page + 1, size)"
+      [disabled]="(page + 1) * size >= totalElements"
+    >
+      Próximo
+    </button>
+  </div>
+</main>
