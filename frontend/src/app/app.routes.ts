@@ -5,6 +5,7 @@ import { SellersListComponent } from './pages/sellers-list/sellers-list.componen
 import { AuthGuardService } from './services/auth-guard.service';
 import { OrderComponent } from './pages/order/order.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ProductListComponent } from './pages/product-list/product-list.component';
 
 export const routes: Routes = [
     {
@@ -18,7 +19,6 @@ export const routes: Routes = [
     {
         path: "sellers",
         component: SellersListComponent,
-        canActivate: [AuthGuardService]
     },
     {
         path: "orders",
@@ -29,5 +29,9 @@ export const routes: Routes = [
         path: "profile",
         component: ProfileComponent,
         canActivate: [AuthGuardService]
+    },
+    {
+        path: "products/page/:id",
+        component: ProductListComponent
     }
 ];

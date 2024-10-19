@@ -3,6 +3,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { Seller } from '../../models/seller.model';
 import { SellerService } from '../../services/seller.service';
 import { NgFor } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sellers-list',
@@ -17,7 +18,7 @@ export class SellersListComponent {
   size = 3;
   totalElements = 0;
 
-  constructor(private sellerService: SellerService) {
+  constructor(private sellerService: SellerService, private router: Router) {
     this.sellerList(this.page, this.size);
   }
 
@@ -32,5 +33,9 @@ export class SellersListComponent {
         console.error('Erro ao buscar vendedores', error);
       },
     });
+  }
+
+  navigate(id: number) {
+    this.router.navigate(['products', 'page', id]);
   }
 }
