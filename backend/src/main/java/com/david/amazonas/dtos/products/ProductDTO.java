@@ -14,6 +14,7 @@ public class ProductDTO {
     private Double price;
     private Integer quantity;
     private String imgUrl;
+    private Long sellerId;
 
     public ProductDTO(Product product) {
         id = product.getId();
@@ -22,5 +23,6 @@ public class ProductDTO {
         price = product.getPrice();
         quantity = product.getQuantity();
         imgUrl = product.getImgUrl();
+        sellerId = product.getSeller().getId();
     }
 }

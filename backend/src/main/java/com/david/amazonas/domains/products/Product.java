@@ -1,7 +1,11 @@
 package com.david.amazonas.domains.products;
 
+import com.david.amazonas.domains.users.User;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_product")
@@ -21,4 +25,8 @@ public class Product {
     private Double price;
     private Integer quantity;
     private String imgUrl;
+
+    @ManyToOne
+    @JoinColumn(name = "seller_id")
+    private User seller;
 }
