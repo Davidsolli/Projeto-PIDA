@@ -1,2 +1,36 @@
 <app-header></app-header>
-<p>order works!</p>
+<main class="container">
+  <section class="order-section">
+    <h2>Pedidos:</h2>
+    <div class="order-container">
+      <div *ngIf="orders.length === 0">
+        <p>Nenhum pedido encontrado.</p>
+      </div>
+      <div class="order-card" *ngFor="let order of orders">
+        <div class="order-info">
+          <h3>Pedido ID: {{ order.id }}</h3>
+          <p>Status: {{ order.status }}</p>
+          <p>Data: {{ order.moment }}</p>
+          <h4>Produto:</h4>
+          <p>Nome: {{ order.product.name }}</p>
+          <p>Preço: R$ {{ order.product.price }}</p>
+          <p>Vendedor: {{ order.seller.name }}</p>
+          <p>Comprador: {{ order.buyer.name }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção de Paginação -->
+    <div class="pagination">
+      <button (click)="previousPage()" [disabled]="page === 0">
+        Anterior
+      </button>
+      <button
+        (click)="nextPage()"
+        [disabled]="(page + 1) * size >= totalElements"
+      >
+        Próximo
+      </button>
+    </div>
+  </section>
+</main>
