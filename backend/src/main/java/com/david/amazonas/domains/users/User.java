@@ -1,5 +1,6 @@
 package com.david.amazonas.domains.users;
 
+import com.david.amazonas.domains.orders.Order;
 import com.david.amazonas.domains.products.Product;
 import jakarta.persistence.*;
 import lombok.*;
@@ -40,6 +41,12 @@ public class User implements UserDetails {
 
     @OneToMany(mappedBy = "seller")
     private List<Product> products = new ArrayList<>();
+
+    @OneToMany(mappedBy = "buyer")
+    private List<Order> buyerOrders = new ArrayList<>();
+
+    @OneToMany(mappedBy = "seller")
+    private List<Order> sellerOrders = new ArrayList<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

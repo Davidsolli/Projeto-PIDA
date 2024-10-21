@@ -5,7 +5,7 @@ import com.david.amazonas.dtos.AuthenticationDTO;
 import com.david.amazonas.dtos.LoginResponseDTO;
 import com.david.amazonas.dtos.RegisterDTO;
 import com.david.amazonas.infra.security.TokenService;
-import com.david.amazonas.repositories.users.UserRepository;
+import com.david.amazonas.repositories.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

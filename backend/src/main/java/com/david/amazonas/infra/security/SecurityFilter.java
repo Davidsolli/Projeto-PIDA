@@ -1,6 +1,6 @@
 package com.david.amazonas.infra.security;
 
-import com.david.amazonas.repositories.users.UserRepository;
+import com.david.amazonas.repositories.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

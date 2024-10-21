@@ -2,7 +2,7 @@ package com.david.amazonas.services.users;
 
 import com.david.amazonas.domains.users.User;
 import com.david.amazonas.dtos.users.SellerListDTO;
-import com.david.amazonas.repositories.users.UserRepository;
+import com.david.amazonas.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

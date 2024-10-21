@@ -2,11 +2,11 @@ package com.david.amazonas.dtos.users;
 
 import com.david.amazonas.domains.users.User;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
 @AllArgsConstructor
-public class SellerListDTO {
+public class SellerDTO {
 
     private Long id;
     private String name;
@@ -14,7 +14,7 @@ public class SellerListDTO {
     private String number;
     private String imgUrl;
 
-    public SellerListDTO(User seller) {
+    public SellerDTO(User seller) {
         id = seller.getId();
         name = seller.getName();
         email = seller.getEmail();

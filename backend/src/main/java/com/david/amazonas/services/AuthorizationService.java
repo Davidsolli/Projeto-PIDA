@@ -1,6 +1,6 @@
 package com.david.amazonas.services;
 
-import com.david.amazonas.repositories.users.UserRepository;
+import com.david.amazonas.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,11 +1,12 @@
 package com.david.amazonas.domains.products;
 
+import com.david.amazonas.domains.orders.Order;
 import com.david.amazonas.domains.users.User;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_product")
@@ -29,4 +30,7 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "seller_id")
     private User seller;
+
+    @OneToMany(mappedBy = "product")
+    private List<Order> order = new ArrayList<>();
 }

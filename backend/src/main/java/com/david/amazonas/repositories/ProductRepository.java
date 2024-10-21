@@ -1,4 +1,4 @@
-package com.david.amazonas.repositories.products;
+package com.david.amazonas.repositories;
 
 import com.david.amazonas.domains.products.Product;
 import org.springframework.data.domain.Page;

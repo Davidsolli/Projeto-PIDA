@@ -36,7 +36,10 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.DELETE, "/product").hasAnyRole("ADMIN", "SELLER")
                         .requestMatchers(HttpMethod.PUT, "/product").hasAnyRole("ADMIN", "SELLER")
                         .requestMatchers(HttpMethod.GET, "/product/{id}").permitAll()
-                        .requestMatchers(HttpMethod.GET, "product/page/{sellerId}/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/product/page/{sellerId}/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/orders/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/orders/page/{buyerId}").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/orders").authenticated()
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();

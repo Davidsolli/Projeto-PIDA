@@ -1,4 +1,4 @@
-package com.david.amazonas.repositories.users;
+package com.david.amazonas.repositories;
 
 import com.david.amazonas.domains.users.User;
 import org.springframework.data.domain.Page;
@@ -6,6 +6,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
@@ -16,5 +18,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
             countQuery = "SELECT COUNT(obj) FROM User obj " +
                     "WHERE obj.userRole = com.david.amazonas.domains.users.UserRole.SELLER")
     Page<User> searchSellers(Pageable pageable);
+
+    Optional<User> findUserByEmail(String email);
 
 }

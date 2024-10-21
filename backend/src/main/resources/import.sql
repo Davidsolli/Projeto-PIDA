@@ -9,13 +9,17 @@ INSERT INTO tb_user(name, email, age, password, address, number, birth_date, img
 INSERT INTO tb_user(name, email, age, password, address, number, birth_date, img_url, cpf, gender, user_role) VALUES('juliana costa', 'juliana@gmail.com', 27, 'juli123', 'rua 10 bloco A', '61966677777', '1996-01-29', 'http://img10.com.br', '25896314700', 'FEMALE', 'BUYER');
 INSERT INTO tb_user(name, email, age, password, address, number, birth_date, img_url, cpf, gender, user_role) VALUES('diego pereira', 'diego@gmail.com', 32, 'diego456', 'avenida 11 casa 04', '61955588888', '1991-03-12', 'http://img11.com.br', '14725836900', 'MALE', 'SELLER');
 
-INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Smartphone Samsung Galaxy', 'Smartphone com tela de 6.4 polegadas e 128GB de armazenamento.', 1200.00, 50, 'https://example.com/img1.jpg', 8);
+INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Smartphone Samsung Galaxy', 'Smartphone com tela de 6.4 polegadas e 128GB de armazenamento.', 1200.00, 50, 'https://example.com/img1.jpg', 3);
 INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Notebook Dell Inspiron', 'Notebook com processador Intel i7 e 16GB de RAM.', 4500.00, 20, 'https://example.com/img2.jpg', 3);
 INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Fone de Ouvido JBL', 'Fone de ouvido Bluetooth com som de alta qualidade.', 250.00, 100, 'https://example.com/img3.jpg', 3);
-INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Mouse Gamer Logitech', 'Mouse gamer com DPI ajustável e iluminação RGB.', 150.00, 75, 'https://example.com/img4.jpg', 6);
-INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Câmera Canon EOS', 'Câmera DSLR com sensor de 24.1 MP.', 3200.00, 15, 'https://example.com/img5.jpg', 6);
-INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Smart TV LG 50"', 'Smart TV 4K com 50 polegadas e sistema operacional webOS.', 2800.00, 30, 'https://example.com/img6.jpg', 6);
-INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Caixa de Som Bluetooth Sony', 'Caixa de som portátil com alta potência e conectividade Bluetooth.', 350.00, 60, 'https://example.com/img7.jpg', 7);
-INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Teclado Mecânico Razer', 'Teclado mecânico gamer com switches personalizados e iluminação RGB.', 500.00, 40, 'https://example.com/img8.jpg', 8);
-INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Tablet Apple iPad', 'Tablet Apple com tela de 10.2 polegadas e 64GB de armazenamento.', 3300.00, 25, 'https://example.com/img9.jpg', 8);
-INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Console Playstation 5', 'Console de última geração com suporte a jogos em 4K.', 5000.00, 10, 'https://example.com/img10.jpg', 10);
+INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Mouse Gamer Logitech', 'Mouse gamer com DPI ajustável e iluminação RGB.', 150.00, 75, 'https://example.com/img4.jpg', 3);
+INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Câmera Canon EOS', 'Câmera DSLR com sensor de 24.1 MP.', 3200.00, 15, 'https://example.com/img5.jpg', 3);
+INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Smart TV LG 50"', 'Smart TV 4K com 50 polegadas e sistema operacional webOS.', 2800.00, 30, 'https://example.com/img6.jpg', 3);
+INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Caixa de Som Bluetooth Sony', 'Caixa de som portátil com alta potência e conectividade Bluetooth.', 350.00, 60, 'https://example.com/img7.jpg', 3);
+INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Teclado Mecânico Razer', 'Teclado mecânico gamer com switches personalizados e iluminação RGB.', 500.00, 40, 'https://example.com/img8.jpg', 3);
+INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Tablet Apple iPad', 'Tablet Apple com tela de 10.2 polegadas e 64GB de armazenamento.', 3300.00, 25, 'https://example.com/img9.jpg', 3);
+INSERT INTO tb_product(name, description, price, quantity, img_url, seller_id) VALUES('Console Playstation 5', 'Console de última geração com suporte a jogos em 4K.', 5000.00, 10, 'https://example.com/img10.jpg', 3);
+
+INSERT INTO tb_order (moment, status, buyer_id, seller_id, product_id) VALUES (CURRENT_TIMESTAMP, 'WAITING_PAYMENT', 1, 2, 1);
+INSERT INTO tb_order (moment, status, buyer_id, seller_id, product_id) VALUES (CURRENT_TIMESTAMP, 'DELIVERED', 2, 3, 2);
+INSERT INTO tb_order (moment, status, buyer_id, seller_id, product_id) VALUES (CURRENT_TIMESTAMP, 'CANCELED', 1, 3, 3);
