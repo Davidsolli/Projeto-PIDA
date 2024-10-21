@@ -55,7 +55,6 @@ export class SignupComponent {
   }
 
   submit() {
-    console.log(this.signupForm);
     this.loginService
       .signup(
         this.signupForm.value.email,
