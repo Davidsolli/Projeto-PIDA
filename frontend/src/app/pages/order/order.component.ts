@@ -15,7 +15,7 @@ import { Order } from '../../models/order.model';
 export class OrderComponent {
   orders: Order[] = [];
   page = 0;
-  size = 10;
+  size = 3;
   totalElements = 0;
   totalPages = 0;
 

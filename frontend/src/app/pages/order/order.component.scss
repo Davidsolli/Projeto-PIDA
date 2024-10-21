@@ -1,8 +1,10 @@
+@import "../../../styles/variables.scss";
+
 .order-section {
   h2 {
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-size: 2em;
   }
 
@@ -46,7 +48,7 @@
       padding: 10px 15px;
       border: none;
       border-radius: 5px;
-      background-color: #007bff;
+      background-color: $color-dark-gray;
       color: white;
       cursor: pointer;
 
@@ -56,7 +58,7 @@
       }
 
       &:hover:not(:disabled) {
-        background-color: #0056b3;
+        background-color: darken($color-dark-gray, 10%)
       }
     }
   }
