@@ -43,8 +43,9 @@ public class OrderService {
     }
 
     @Transactional(readOnly = true)
-    public Page<OrderDTO> findAllByBuyerId(Long buyerId, Pageable pageable) {
-        Page<Order> result = orderRepository.findAllOrdersByBuyerId(buyerId, pageable);
+    public Page<OrderDTO> findAllByBuyerId(Pageable pageable) {
+        User user = userService.getAuthenticatedUser();
+        Page<Order> result = orderRepository.findAllOrdersByBuyerId(user.getId(), pageable);
         return result.map(OrderDTO::new);
     }
 

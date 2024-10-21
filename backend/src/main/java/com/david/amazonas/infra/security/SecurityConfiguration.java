@@ -38,8 +38,10 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.GET, "/product/{id}").permitAll()
                         .requestMatchers(HttpMethod.GET, "/product/page/{sellerId}/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/orders/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/orders/page/{buyerId}").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/orders/page/**").authenticated()
                         .requestMatchers(HttpMethod.POST, "/orders").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/users").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/users").permitAll()
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();

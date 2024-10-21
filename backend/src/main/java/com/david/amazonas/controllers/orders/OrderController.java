@@ -24,9 +24,9 @@ public class OrderController {
         return ResponseEntity.ok(orderDTO);
     }
 
-    @GetMapping(value = "/page/{buyerId}")
-    public ResponseEntity<Page<OrderDTO>> findAllOrdersByBuyerId(@PathVariable Long buyerId, Pageable pageable) {
-        Page<OrderDTO> result = orderService.findAllByBuyerId(buyerId, pageable);
+    @GetMapping(value = "/page")
+    public ResponseEntity<Page<OrderDTO>> findAllOrdersByBuyerId(Pageable pageable) {
+        Page<OrderDTO> result = orderService.findAllByBuyerId(pageable);
         return ResponseEntity.ok(result);
     }
 
